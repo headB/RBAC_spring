@@ -10,12 +10,14 @@ import org.springframework.stereotype.Service;
 public class ShowUserServiceImp implements IShowUserService {
 
     @Autowired
-    UserMapper usermapper;
+    private UserMapper usermapper;
 
     @Override
     public User queryUser() {
 
-
+        User u1 = usermapper.selectByPrimaryKey(1);
+        System.out.println(u1);
+        return u1;
 
     }
 }
