@@ -1,9 +1,6 @@
-package cn.wolfcode.ssm.controller;
+package cn.wolfcode.ssm.web.controller;
 
 
-
-import java.util.HashMap;
-import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,13 +17,17 @@ public class TestController {
         model.addAttribute("username",username);
         model.addAttribute("age",age);
 
+        //查询一下查询数据库数据,然后展示到前端的页面来显示!.
+
+
+
 
         return "/WEB-INF/view/index.jsp";
     }
 
     @RequestMapping("index2")
     public String test1(){
-        System.out.println(777);
+
         return "5566";
 
     }

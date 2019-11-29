@@ -12,7 +12,14 @@
 
 	<dependencies>
 
-	  <dependency>
+		<dependency>
+			<groupId>org.mybatis.generator</groupId>
+			<artifactId>mybatis-generator-maven-plugin</artifactId>
+			<version>1.3.2</version>
+
+		</dependency>
+
+		<dependency>
 		  <groupId>org.projectlombok</groupId>
 		  <artifactId>lombok</artifactId>
 		  <version>1.18.10</version>
@@ -67,12 +74,11 @@
 		  <version>1.1.9</version>
 	  </dependency>
 
-	  <dependency>
-		  <groupId>mysql</groupId>
-		  <artifactId>mysql-connector-java</artifactId>
-		  <version>5.1.45</version>
-		  <scope>runtime</scope>
-	  </dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.11</version>
+		</dependency>
 
 	  <dependency>
 		  <groupId>log4j</groupId>
@@ -109,6 +115,37 @@
   		</configuration>
 
   		</plugin>
+
+		<plugin>
+			<groupId>org.mybatis.generator</groupId>
+			<artifactId>mybatis-generator-maven-plugin</artifactId>
+			<version>1.3.2</version>
+			<configuration>
+
+				<verbose>true</verbose>
+				<overwrite>true</overwrite>
+
+				<!-- 自动生成的配置,感觉更像生成指定文件 -->
+				<configurationFile>src/main/resources/generatorConfig.xml</configurationFile>
+
+			</configuration>
+
+
+
+			<dependencies>
+
+				<dependency>
+					<groupId>mysql</groupId>
+					<artifactId>mysql-connector-java</artifactId>
+					<version>8.0.11</version>
+				</dependency>
+
+			</dependencies>
+
+			<!-- 自动生成的配置 -->
+
+
+		</plugin>
   		
   		
   	</plugins>
