@@ -8,16 +8,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
 public class TestController {
 
     @Autowired
-    private ShowUserServiceImp showUserServiceImp;
+    private IShowUserService showUserServiceImp;
 
     @RequestMapping("/index")
-    public String index(String username,Model model,Integer age,String password){
+    public String index(@RequestParam(value = "name",required = false) String username, Model model, Integer age, String password){
 
         model.addAttribute("username",username);
         model.addAttribute("age",age);
