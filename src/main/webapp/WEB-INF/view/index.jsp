@@ -18,6 +18,8 @@
 
     <p>下面即将输出user的数据</p>
     <p>${userInfo}</p>
+
+    <p>测试 @modelAttribute ${name1}</p>
 <%--    <p>我的名字是->: ${username}</p>--%>
 <%--    <p>我的年龄是->:${age}</p>--%>
 

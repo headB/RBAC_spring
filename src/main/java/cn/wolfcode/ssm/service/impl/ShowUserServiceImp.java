@@ -16,7 +16,7 @@ public class ShowUserServiceImp implements IShowUserService {
     public User queryUser() {
 
         User u1 = usermapper.selectByPrimaryKey(1);
-        System.out.println(u1);
+//        System.out.println(u1);
         return u1;
 
     }
