@@ -2,6 +2,8 @@ package cn.wolfcode.ssm.web.controller;
 
 
 import cn.wolfcode.ssm.domain.User;
+import cn.wolfcode.ssm.query.PageResult;
+import cn.wolfcode.ssm.query.QueryObject;
 import cn.wolfcode.ssm.service.IShowUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,7 +20,7 @@ public class TestController {
     private IShowUserService showUserServiceImp;
 
     @RequestMapping("/index")
-    public String index(  @ModelAttribute("name1")  String username, Model model, Integer age, String password,User user){
+    public String index(@ModelAttribute("name1")  String username, Model model, Integer age, String password, User user, QueryObject qo){
 
         model.addAttribute("username",username);
         model.addAttribute("age",age);
@@ -30,6 +32,13 @@ public class TestController {
         User u1 = showUserServiceImp.queryUser();
         System.out.println(u1);
         model.addAttribute("userInfo",u1);
+
+        //查询分页结果.
+        PageResult<User> pageResult = showUserServiceImp.queryPage(qo);
+
+        System.out.println(pageResult);
+        System.out.println(66);
+
 
         return "/WEB-INF/view/index.jsp";
     }

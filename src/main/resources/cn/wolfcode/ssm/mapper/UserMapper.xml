@@ -29,4 +29,11 @@
     select id, username, password
     from user
   </select>
+
+<!--  我忘记了原来mybaits里面  #{name} 其实是getName()的意思，真的忘记了。哈哈哈  -->
+    <select id="queryPage" resultType="cn.wolfcode.ssm.domain.User">
+
+      select * from user limit #{start},#{pageSize}
+
+    </select>
 </mapper>

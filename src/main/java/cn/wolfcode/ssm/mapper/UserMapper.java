@@ -1,6 +1,8 @@
 package cn.wolfcode.ssm.mapper;
 
 import cn.wolfcode.ssm.domain.User;
+import cn.wolfcode.ssm.query.QueryObject;
+
 import java.util.List;
 
 public interface UserMapper {
@@ -13,4 +15,6 @@ public interface UserMapper {
     List<User> selectAll();
 
     int updateByPrimaryKey(User record);
+
+    List<User> queryPage(QueryObject qo);
 }
