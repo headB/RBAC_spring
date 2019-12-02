@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: lizhixuan
@@ -12,7 +13,21 @@
 </head>
 <body>
 
+<form>
 
+    <input type="checkbox" name="coffee" value="加冰">加冰<br>
+    <input type="checkbox" name="coffee" value="加糖">加糖<br>
+    <input type="checkbox" name="coffee" value="走奶">走奶<br>
+    <input type="submit" >
+
+    <select name="multiValue" multiple="true">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+    </select>
+
+</form>
 
 </body>
 </html>
