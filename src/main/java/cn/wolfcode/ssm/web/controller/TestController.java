@@ -11,6 +11,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 @Controller
@@ -18,6 +22,18 @@ public class TestController {
 
     @Autowired
     private IShowUserService showUserServiceImp;
+
+    @RequestMapping("/index33")
+    @ResponseBody
+    public Map<String,String> returnMap(){
+
+        Map<String,String> map = new HashMap();
+        map.put("username","kumanxuan");
+        map.put("passowrd","lizhixuan123!");
+//        map.put("")
+
+        return map;
+    }
 
     @RequestMapping("/index")
     public String index(@ModelAttribute("name1")  String username, Model model, Integer age, String password, User user, QueryObject qo){
