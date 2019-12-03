@@ -149,7 +149,7 @@
                 <configuration>
                     <port>8088</port>
                     <path>/</path>
-                    <url>UTF-8</url>
+                   <uriEncoding>UTF-8</uriEncoding>
 
                 </configuration>
 

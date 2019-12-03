@@ -22,6 +22,13 @@
     <p>测试 @modelAttribute ${name1}</p>
 <%--    <p>我的名字是->: ${username}</p>--%>
 <%--    <p>我的年龄是->:${age}</p>--%>
-
+<div style="width: 100%;text-align: center"  >
+<div  >
+<form method="post">
+    <input name="username">
+    <input type="submit" >
+</form>
+</div>
+</div>
 </body>
 </html>
