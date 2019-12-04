@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--这里需要引入JSTL--%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>我这个是标题,用的是spring-mvc+spring容器</title>
@@ -29,6 +31,22 @@
     <input type="submit" >
 </form>
 </div>
+    
+    <div>
+        <p>我!</p>
+
+<%--        这里想实现一个遍历数据的功能.!!!试一试啦!.分页的!.--%>
+        <c:if test="${pageInfo != null}" >
+            <c:forEach items="${pageInfo.data}" var="page" >
+                <p>${page.username}</p>
+            </c:forEach>
+        </c:if>
+
+        
+        
+    </div>
+    
+    
 </div>
 </body>
 </html>
