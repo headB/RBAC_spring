@@ -1,10 +1,8 @@
 package cn.wolfcode.ssm.service;
 
 import cn.wolfcode.ssm.domain.User;
-import cn.wolfcode.ssm.query.PageResult;
 import cn.wolfcode.ssm.query.QueryObject;
-import org.springframework.stereotype.Service;
-
+import com.github.pagehelper.PageInfo;
 
 
 public interface IShowUserService {
@@ -13,5 +11,5 @@ public interface IShowUserService {
 
     public User queryUser();
 
-    PageResult<User> queryPage(QueryObject qo);
+    PageInfo<User> queryPage(QueryObject qo);
 }

@@ -5,6 +5,7 @@ import cn.wolfcode.ssm.domain.User;
 import cn.wolfcode.ssm.query.PageResult;
 import cn.wolfcode.ssm.query.QueryObject;
 import cn.wolfcode.ssm.service.IShowUserService;
+import com.github.pagehelper.PageInfo;
 import org.graalvm.compiler.core.GraalCompiler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -51,7 +52,7 @@ public class TestController {
         model.addAttribute("userInfo",u1);
 
         //查询分页结果.
-        PageResult<User> pageResult = showUserServiceImp.queryPage(qo);
+        PageInfo<User> pageResult = showUserServiceImp.queryPage(qo);
 
 
 
@@ -60,7 +61,7 @@ public class TestController {
         //尝试获取session
         System.out.println(pageResult);
 
-        return "/WEB-INF/view/index.jsp";
+        return "index";
     }
 
     @RequestMapping("index2")

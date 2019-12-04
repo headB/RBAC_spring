@@ -17,4 +17,6 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
     List<User> queryPage(QueryObject qo);
+
+    List<User> queryForList1(QueryObject qo);
 }

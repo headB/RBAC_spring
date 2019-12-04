@@ -36,4 +36,9 @@
       select * from user limit #{start},#{pageSize}
 
     </select>
+  <select id="queryForList1" resultType="cn.wolfcode.ssm.domain.User">
+
+    select * from user
+
+  </select>
 </mapper>
