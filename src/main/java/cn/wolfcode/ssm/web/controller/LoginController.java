@@ -2,6 +2,8 @@ package cn.wolfcode.ssm.web.controller;
 
 
 import cn.wolfcode.ssm.domain.User;
+import cn.wolfcode.ssm.util.JsonResult;
+import com.alibaba.fastjson.JSON;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +28,8 @@ public class LoginController {
     @RequestMapping("/css/touchMe")
     public String oldReturn(Model model) {
 
-
+        String msg1 =  JSON.toJSONString(new JsonResult());
+        System.out.println(msg1);
 
         model.addAttribute("username", new User(44, "kumanxuan", "666"));
 

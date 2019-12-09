@@ -1,8 +1,12 @@
 package cn.wolfcode.ssm.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
     private Integer id;
 
