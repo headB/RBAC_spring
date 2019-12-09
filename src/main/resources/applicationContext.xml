@@ -44,11 +44,11 @@
     
 <!--  现在过来配置拦截器   -->
     
-    <mvc:interceptors>
-        <mvc:interceptor>
-            <mvc:mapping path="/**"/>
-            <bean class="cn.wolfcode.ssm.util.Interrupt" />
-        </mvc:interceptor>
-    </mvc:interceptors>
+<!--    <mvc:interceptors>-->
+<!--        <mvc:interceptor>-->
+<!--            <mvc:mapping path="/**"/>-->
+<!--            <bean class="cn.wolfcode.ssm.util.Interrupt" />-->
+<!--        </mvc:interceptor>-->
+<!--    </mvc:interceptors>-->
 
 </beans>

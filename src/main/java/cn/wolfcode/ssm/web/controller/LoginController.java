@@ -10,7 +10,7 @@ public class LoginController {
     @RequestMapping("/login")
     public String loginIndex(){
 
-        return "/WEB-INF/login.html";
+        return "login/login";
     }
 
 }

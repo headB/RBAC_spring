@@ -11,7 +11,7 @@
 
     <!--<context:component-scan base-package="cn.wolfcode.ssm" />-->
 
-    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+    <bean id="CRMProxyFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <!--引用指定的安全管理器-->
         <property name="securityManager" ref="securityManager"/>
         <property name="loginUrl" value="/login.html"/>
