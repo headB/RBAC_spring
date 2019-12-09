@@ -12,6 +12,11 @@
 <!--<context:component-scan base-package="cn.wolfcode.ssm" />-->
 
     <import resource="classpath:applicationContext.xml"/>
+
+
+<!--    引入shiro.xml的认证配置 -->
+    <import resource="classpath:shiro.xml" />
+
 <!--    <mvc:annotation-config/>-->
 <!--    原来这个位置是配置 MVC 注解解析器-->
     <mvc:annotation-driven/>
