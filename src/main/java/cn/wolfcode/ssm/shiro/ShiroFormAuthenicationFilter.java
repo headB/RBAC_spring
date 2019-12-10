@@ -45,11 +45,11 @@ public class ShiroFormAuthenicationFilter extends FormAuthenticationFilter {
     protected boolean onLoginFailure(AuthenticationToken token, AuthenticationException e, ServletRequest request, ServletResponse response) {
 
 
-
         try {
             response.setContentType("application/json;charset=utf-8");
-            String msg = JSON.toJSONString(new JsonResult());
+            String msg = JSON.toJSONString(new JsonResult("登陆失败!",false));
             response.getWriter().print(msg);
+            System.out.println(e);
         } catch (IOException ex) {
             ex.printStackTrace();
         }

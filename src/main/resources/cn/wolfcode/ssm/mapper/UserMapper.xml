@@ -40,5 +40,10 @@
 
     select * from user
 
-  </select>
+  </select >
+    <select id="selectByAccount" resultType="cn.wolfcode.ssm.domain.User">
+
+      select * from user where username = #{username}
+
+    </select>
 </mapper>

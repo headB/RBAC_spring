@@ -2,6 +2,7 @@ package cn.wolfcode.ssm.web.controller;
 
 
 import cn.wolfcode.ssm.domain.User;
+import cn.wolfcode.ssm.mapper.UserMapper;
 import cn.wolfcode.ssm.query.QueryObject;
 import cn.wolfcode.ssm.service.IShowUserService;
 import com.github.pagehelper.PageInfo;
@@ -20,11 +21,18 @@ import java.util.Map;
 public class TestController {
 
     @Autowired
+    private UserMapper userMapper;
+
+    @Autowired
     private IShowUserService showUserServiceImp;
 
     @RequestMapping("/index33")
     @ResponseBody
-    public Map<String,String> returnMap(){
+    public Map<String,String> returnMap(String username){
+
+        //查询mapper
+        User user1 = userMapper.selectByAccount(username);
+        System.out.println("this is my unfinded user" + user1);
 
         Map<String,String> map = new HashMap();
         map.put("username","kumanxuan");
@@ -40,7 +48,12 @@ public class TestController {
         model.addAttribute("username",username);
         model.addAttribute("age",age);
 
+
+
         System.out.println(user);
+
+
+
 
         //查询一下查询数据库数据,然后展示到前端的页面来显示!.
 

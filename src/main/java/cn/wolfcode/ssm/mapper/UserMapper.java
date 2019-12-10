@@ -19,4 +19,6 @@ public interface UserMapper {
     List<User> queryPage(QueryObject qo);
 
     List<User> queryForList1(QueryObject qo);
+
+    User selectByAccount(String username);
 }
