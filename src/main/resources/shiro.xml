@@ -11,6 +11,15 @@
 
     <!--<context:component-scan base-package="cn.wolfcode.ssm" />-->
 
+    <!--    添加第三方安全管理器的缓存-->
+    <bean id="cacheManager"
+          class="org.apache.shiro.cache.ehcache.EhCacheManager">
+        <!-- 设置配置文件 -->
+        <property name="cacheManagerConfigFile" value="classpath:shiro
+ehcache.xml"/>
+    </bean>
+
+
     <bean id="CRMProxyFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <!--引用指定的安全管理器-->
         <property name="securityManager" ref="securityManager"/>
@@ -38,28 +47,29 @@
 
     <bean name="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="realm" ref="crmRealm"/>
-
+<!--        这个地方引用一下上面刚刚配置的缓存插件  -->
+        <property name="cacheManager" ref="cacheManager" />
     </bean>
 
-<!--    开启注解器扫描 -->
+    <!--    开启注解器扫描 -->
     <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
         <property name="securityManager" ref="securityManager"/>
     </bean>
 
 
-<!--    设置自定义的统一异常处理 -->
+    <!--    设置自定义的统一异常处理 -->
     <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
         <!-- 定义默认的异常处理页面，当该异常类型的注册时使用 -->
         <property name="defaultErrorView" value="common/error"/>
         <!-- 定义异常处理页面用来获取异常信息的变量名，默认名为exception -->
-<!--        <property name="exceptionAttribute" value="ex"/>-->
-<!--        &lt;!&ndash; 定义需要特殊处理的异常，用类名或完全路径名作为key，异常也页名作为值 &ndash;&gt;-->
-<!--        <property name="exceptionMappings">-->
-<!--            <value>-->
-<!--                org.apache.shiro.authz.UnauthorizedException=common/nopermission-->
-<!--                &lt;!&ndash; 这里还可以继续扩展不同异常类型的异常处理 &ndash;&gt;-->
-<!--            </value>-->
-<!--        </property>-->
+        <!--        <property name="exceptionAttribute" value="ex"/>-->
+        <!--        &lt;!&ndash; 定义需要特殊处理的异常，用类名或完全路径名作为key，异常也页名作为值 &ndash;&gt;-->
+        <!--        <property name="exceptionMappings">-->
+        <!--            <value>-->
+        <!--                org.apache.shiro.authz.UnauthorizedException=common/nopermission-->
+        <!--                &lt;!&ndash; 这里还可以继续扩展不同异常类型的异常处理 &ndash;&gt;-->
+        <!--            </value>-->
+        <!--        </property>-->
     </bean>
 
 
