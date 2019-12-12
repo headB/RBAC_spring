@@ -5,8 +5,10 @@ import cn.wolfcode.ssm.domain.User;
 import cn.wolfcode.ssm.mapper.UserMapper;
 import cn.wolfcode.ssm.query.QueryObject;
 import cn.wolfcode.ssm.service.IShowUserService;
+import cn.wolfcode.ssm.util.RequirementPerssion;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -42,6 +44,7 @@ public class TestController {
         return map;
     }
 
+    @RequirementPerssion(name="66")
     @RequestMapping("/index")
     public String index(@ModelAttribute("name1")  String username, Model model, Integer age, String password, User user, QueryObject qo){
 
