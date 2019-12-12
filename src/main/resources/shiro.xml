@@ -15,8 +15,7 @@
     <bean id="cacheManager"
           class="org.apache.shiro.cache.ehcache.EhCacheManager">
         <!-- 设置配置文件 -->
-        <property name="cacheManagerConfigFile" value="classpath:shiro
-ehcache.xml"/>
+        <property name="cacheManagerConfigFile" value="classpath:shiro-ehcache.xml"/>
     </bean>
 
 
